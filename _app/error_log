@@ -1,0 +1,1 @@
+[27-Mar-2021 20:36:09 America/Fortaleza] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home4/paran961/public_html/update_categorias/_app/Config.inc.php on line 30

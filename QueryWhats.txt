@@ -1,0 +1,4 @@
+Executar a seguinte query:
+
+ALTER TABLE `ws_empresa`
+    ADD COLUMN `btn_whats` tinyint(4) NOT NULL;
