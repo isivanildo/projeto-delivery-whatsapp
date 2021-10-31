@@ -168,7 +168,7 @@ endif;
                 </table>
             </div>
         </div>
-        <script>listMotoboys();</script>
+        <script>listMotoboys(<?=$codigo_pedido;?>);</script>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
@@ -180,10 +180,10 @@ endif;
   
 <script>
     function listMotoboys(id_ped) {
-        <? $lerbanco->ExeRead('ws_pedidos', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
+        <?= $lerbanco->ExeRead('ws_pedidos', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
         var listPedidos = <?=json_encode($lerbanco->getResult());?>;
         
-        <? $lerbanco->ExeRead('ws_motoboys', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
+        <?= $lerbanco->ExeRead('ws_motoboys', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
         var data = <?=json_encode($lerbanco->getResult());?>;
         
         var exists = false;
@@ -287,7 +287,7 @@ endif;
             echo "{$msg_delivery_false}\n  <br />";
             echo "Observações: {$name_observacao_mesa}\n  <br />";
           else:
-            echo "Rua: {$rua}, Nº {$unidade}\n  <br />";
+            echo "Rua: {$logradouro}, Nº {$cidade}\n  <br />";
             echo "Bairro: {$bairro}\n  <br />";
             echo "Cidade: {$cidade} - {$uf}\n  <br />";
             echo "Complemento: {$complemento}\n  <br />";

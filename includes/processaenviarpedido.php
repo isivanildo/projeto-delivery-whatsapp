@@ -106,7 +106,7 @@ if(isset($get_dados_pedido['enviar_pedido']) && $get_dados_pedido['enviar_pedido
 	$get_dados_pedido['complemento'] = (empty($get_dados_pedido['complemento']) ? '*Não informado*' : $get_dados_pedido['complemento']);
 	$get_dados_pedido['observacao'] = (empty($get_dados_pedido['observacao']) ? '*Não informado*' : $get_dados_pedido['observacao']);
 
-	$get_dados_pedido['telefone']    = preg_replace("/[^0-9]/", "", $get_dados_pedido['telefone']);
+	$get_dados_pedido['telefone']  = preg_replace("/[^0-9]/", "", $get_dados_pedido['telefone']);
 
 	if(in_array('', $get_dados_pedido) || in_array('null', $get_dados_pedido)):
 		echo "<script>
@@ -240,7 +240,7 @@ if(isset($get_dados_pedido['enviar_pedido']) && $get_dados_pedido['enviar_pedido
 
 
 			if($get_dados_pedido['opcao_delivery'] == 'true'):
-				$terceira_parte_pedido = "*Endereço:*<br />Rua: {$get_dados_pedido['rua']}, Nº: {$get_dados_pedido['numero']},<br />Bairro: {$bairrolink},<br />Cidade: {$get_dados_pedido['cidade']}, {$get_dados_pedido['uf']},<br />Complemento:<br />{$get_dados_pedido['complemento']}<br />OBS: {$get_dados_pedido['observacao']}<br /><br />";
+				$terceira_parte_pedido = "*Endereço:*<br />Rua: {$get_dados_pedido['logradouro']}, Nº: {$get_dados_pedido['numero']},<br />Bairro: {$bairrolink},<br />Cidade: {$get_dados_pedido['cidade']}, {$get_dados_pedido['uf']},<br />Complemento:<br />{$get_dados_pedido['complemento']}<br />OBS: {$get_dados_pedido['observacao']}<br /><br />";
 
 			elseif(!empty($get_dados_pedido['mesa']) && !empty($get_dados_pedido['pessoas'])):
 
@@ -485,8 +485,6 @@ if($store_hours->is_open()) {
 					$tabela_api['USER_ID'] = $getu;
 					$tabela_api['ID_WS_PEDIDOS'] = $addbanco->getResult();
 					$tabela_api['CODIGO_PEDIDO'] = $get_dados_pedido['codigo_pedido'];
-
-
 
 					$allItems = $cart->getItems();
 					foreach ($allItems as $items) {

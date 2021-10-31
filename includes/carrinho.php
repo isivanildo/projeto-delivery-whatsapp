@@ -189,8 +189,9 @@ function tirarAcentos($string){
 								<div class="row">
 									<div class="col-md-6 col-sm-6">
 										<div class="form-group">
-											<label for="rua"><span style="color: red;">* </span><?=$texto['msg_sua_rua'];?></label>
-											<input type="text" required id="rua" name="rua" size="60" class="form-control" placeholder="">
+											<label for="logradouro"><span style="color: red;">* </span><?=$texto['msg_sua_rua'];?></label>
+											<input type="text" required id="logradouro" name="logradouro" size="60" class="form-control" placeholder="">
+											<input type="hidden" required id="desconto" name="desconto" size="60" class="form-control" value="0">
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-6">
@@ -574,7 +575,7 @@ function tirarAcentos($string){
 									//alert(res['logradouro']);
 									$("#cidade").attr("value",res['localidade'])
 									$("#uf").attr("value",res['uf'])
-									$("#rua").attr("value",res['logradouro'])
+									$("#logradouro").attr("value",res['logradouro'])
 									//$("#numero").attr("value",res['logradouro'])
                 				},
                     		error: function (xhr, ajaxOptions, thrownError) {
@@ -610,7 +611,7 @@ function tirarAcentos($string){
 							data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							data.append('cidade',$("#cidade").val());
 							data.append('uf',$("#uf").val());
-							data.append('rua',$("#rua").val());
+							data.append('logradouro',$("#logradouro").val());
 							data.append('numero',$("#numero").val());
 							data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -627,7 +628,7 @@ function tirarAcentos($string){
 							//data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							//data.append('cidade',$("#cidade").val());
 							//data.append('uf',$("#uf").val());
-							//data.append('rua',$("#rua").val());
+							//data.append('logradouro',$("#logradouro").val());
 							//data.append('numero',$("#numero").val());
 							//data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -647,7 +648,7 @@ function tirarAcentos($string){
 							//data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							//data.append('cidade',$("#cidade").val());
 							//data.append('uf',$("#uf").val());
-							//data.append('rua',$("#rua").val());
+							//data.append('logradouro',$("#logradouro").val());
 							//data.append('numero',$("#numero").val());
 							//data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -662,7 +663,7 @@ function tirarAcentos($string){
 							contentType: false,
 							/*data: { "action" : "add", "user" : <?=$getu;?>, "taxa_v" : $("#valor_taxa").val(), "sub_total" : $("#sub_total").val(), 
 	                			"telefone" : $("#telefone").val(), "nome" : $("#nome").val(), "bairro" : $("#framework option:selected").html(),
-	                			"cidade" : $("#cidade").val(), "uf" : $("#uf").val(), "rua" : $("#rua").val(),
+	                			"cidade" : $("#cidade").val(), "uf" : $("#uf").val(), "logradouro" : $("#logradouro").val(),
 	                			"numero" : $("#numero").val(), "complemento" : $("#complemento").val(), "confirm_whatsapp" : $("#green").prop("checked"), "opcao_delivery" : $("#opcao_delivery").val() },*/
 							data: data,
 							success: function(response) {
@@ -725,7 +726,7 @@ function tirarAcentos($string){
 							data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							data.append('cidade',$("#cidade").val());
 							data.append('uf',$("#uf").val());
-							data.append('rua',$("#rua").val());
+							data.append('logradouro',$("#logradouro").val());
 							data.append('numero',$("#numero").val());
 							data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -742,7 +743,7 @@ function tirarAcentos($string){
 							//data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							//data.append('cidade',$("#cidade").val());
 							//data.append('uf',$("#uf").val());
-							//data.append('rua',$("#rua").val());
+							//data.append('logradouro',$("#logradouro").val());
 							//data.append('numero',$("#numero").val());
 							//data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -762,7 +763,7 @@ function tirarAcentos($string){
 							//data.append('bairro',($("#framework").length > 0 ? $("#framework option:selected").html() : $("#bairro").val()));
 							//data.append('cidade',$("#cidade").val());
 							//data.append('uf',$("#uf").val());
-							//data.append('rua',$("#rua").val());
+							//data.append('logradouro',$("#logradouro").val());
 							//data.append('numero',$("#numero").val());
 							//data.append('complemento',$("#complemento").val());
 							data.append('confirm_whatsapp',$("#green").prop("checked"));
@@ -777,7 +778,7 @@ function tirarAcentos($string){
 							contentType: false,
 							/*data: { "action" : "add", "user" : <?=$getu;?>, "taxa_v" : $("#valor_taxa").val(), "sub_total" : $("#sub_total").val(), 
 									"telefone" : $("#telefone").val(), "nome" : $("#nome").val(), "bairro" : $("#framework option:selected").html(),
-									"cidade" : $("#cidade").val(), "uf" : $("#uf").val(), "rua" : $("#rua").val(),
+									"cidade" : $("#cidade").val(), "uf" : $("#uf").val(), "logradouro" : $("#logradouro").val(),
 									"numero" : $("#numero").val(), "complemento" : $("#complemento").val(), "confirm_whatsapp" : $("#green").prop("checked"), "opcao_delivery" : $("#opcao_delivery").val() },*/
 							data: data,
 							success: function(response) {
@@ -845,7 +846,7 @@ function tirarAcentos($string){
 								($("#bairro").length > 0 && $("#bairro").val() == "") ||
 								$("#cidade").val() == "" ||
 								$("#uf").val() == "" ||
-								$("#rua").val() == "" ||
+								$("#logradouro").val() == "" ||
 								$("#numero").val() == "" ||
 								$("#forma_pagamento option:selected").val() == "") {
     	        				return false;
