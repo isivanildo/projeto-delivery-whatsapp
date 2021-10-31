@@ -472,8 +472,8 @@ endif;
         
         var str = "";
         for (i = 0; i < data.length; i++) {
-            var name = data[i]['deliveryman_name'];
-            var phone_number = data[i]['deliveryman_phone_number'];
+            var name = data[i]['motoboy_name'];
+            var phone_number = data[i]['motoboy_phone_number'];
             var phone_number_nopont = phone_number.replace("(","");
             var phone_number_nopont = phone_number_nopont.replace(")","");
             var phone_number_nopont = phone_number_nopont.replace(" ","");
