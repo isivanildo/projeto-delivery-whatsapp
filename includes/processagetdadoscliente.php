@@ -20,8 +20,8 @@ if($lerbanco->getResult()):
 		extract($i);
 	endforeach;
 
-	$complemento1 = ($complemento == '*Não informado*' ? '' : $complemento);
-	$observacao1  = ($observacao == '*Não informado*' ? '' : $observacao);
+	$complemento1 = ($complemento == '*Nï¿½o informado*' ? '' : $complemento);
+	$observacao1  = ($observacao == '*Nï¿½o informado*' ? '' : $observacao);
 	$nome = str_replace('%20', ' ', $nome);
 
 	$lerbanco->ExeRead('bairros_delivery');
@@ -29,8 +29,8 @@ if($lerbanco->getResult()):
 		echo "
 		<script type=\"text/javascript\">
 		$('#nome').val('{$nome}');
-		$('#rua').val('{$rua}');
-		$('#unidade').val('{$unidade}');
+		$('#rua').val('{$logradouro}');
+		$('#unidade').val('{$cidade}');
 		$('#cidade').val('{$cidade_empresa}');
 		$('#uf').val('{$end_uf_empresa}');
 		$('#complemento').val('{$complemento1}');
@@ -42,8 +42,8 @@ if($lerbanco->getResult()):
 		echo "
 		<script type=\"text/javascript\">
 		$('#nome').val('{$nome}');
-		$('#rua').val('{$rua}');
-		$('#unidade').val('{$unidade}');
+		$('#rua').val('{$logradouro}');
+		$('#unidade').val('{$cidade}');
 		$('#cidade').val('{$cidade}');
 		$('#uf').val('{$uf}');
 		$('#complemento').val('{$complemento1}');

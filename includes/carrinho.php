@@ -222,7 +222,7 @@ function tirarAcentos($string){
 										<div class="form-group">
 											<label for="forma_pagamento"><span style="color: red;">* </span><?=$texto['msg_f_pagamento'];?></label>
 											<select class="form-control" required name="forma_pagamento" id="forma_pagamento">	
-											    <option>Selecione...</option>
+											    <option><?=$texto['msg_f_pagamento']?></option>
 												<?php	
 												$lerbanco->ExeRead('ws_formas_pagamento', 'WHERE user_id = :idus', "idus={$getu}");
 												if($lerbanco->getResult()):
@@ -473,7 +473,7 @@ function tirarAcentos($string){
 													method: "post",
 													data: $('#getDadosPedidoCompleto').serialize(),
 
-													success: function(data){				
+													success: function(data){		
 														$('#resultadoEnviarPedido').html(data);
 														$('.enviarpedido').html('<?=$texto['msg_pedir_agora'];?>');
 														$('.enviarpedido').prop('disabled', false);
