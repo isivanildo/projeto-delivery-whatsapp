@@ -1678,6 +1678,7 @@ s.checkbox-holder {
 .nomargin_top {margin-top:0;}
 .nopadding {margin: 0 !important;padding: 0 !important;}
 .nomargin {margin: 0 !important;}
+.margin_cat_body {margin-left: 15px;}
 
 
 /* 3.6 Map */

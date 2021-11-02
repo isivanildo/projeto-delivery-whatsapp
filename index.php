@@ -46,8 +46,6 @@ else:
 		header("Location: {$site}Demo");
 	endif;
 
-
-
 	$lerbanco->ExeRead('ws_fuso_horario', "WHERE user_id = :useridd", "useridd={$getu}");
 	if(!$lerbanco->getResult()):
 	else:
@@ -61,7 +59,6 @@ else:
 	else:
 		date_default_timezone_set('America/Sao_Paulo');
 	endif;
-
 	?>
 
 	<!DOCTYPE html>
@@ -76,7 +73,7 @@ else:
 
 		<meta name="robots" content="index, fallow" />
 		<link rel="canonical" href="<?=$site.$Url[0];?>">
-		<meta name="author" content="Alex Silva">
+		<meta name="author" content="Ivanildo Ferreira">
 		<meta name="og:title" content="<?=(!empty($nome_empresa) ? 'Cardápio | '.$nome_empresa : 'Nome_do_seu_negócio');?>" />
 		<meta name="og:type" content="website">
 		<meta property="og:site_name" content="<?=$texto['nome_site_landing'];?>"/>

@@ -233,9 +233,9 @@ endif;
   <label>Escolha seu plano</label>
   <select name="user_plano" class="form-control" >
     <option value="">Selecione um Plano</option>
-    <option value="1"><?=$texto['nomePlanoUm'];?> - R$<?=$texto['valorPlanoUm'];?>,00</option>
-    <option value="2"><?=$texto['nomePlanoDois'];?> - R$<?=$texto['valorPlanoDois'];?>,00</option>
-    <option value="3"><?=$texto['nomePlanoTres'];?> - R$<?=$texto['valorPlanoTres'];?>,00</option>
+    <option value="1"><?=$texto['nomePlanoUm'];?> - R$ <?=Check::Real($texto['valorPlanoUm']);?></option>
+    <option value="2"><?=$texto['nomePlanoDois'];?> - R$ <?=Check::Real($texto['valorPlanoDois']);?></option>
+    <option value="3"><?=$texto['nomePlanoTres'];?> - R$ <?=Check::Real($texto['valorPlanoTres']);?></option>
   </select>
 </div>
 

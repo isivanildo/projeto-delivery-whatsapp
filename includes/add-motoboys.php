@@ -15,7 +15,7 @@ if(!empty($logoff) && $logoff == true):
 	$dataEhora    = date('d/m/Y H:i');
 	$ip           = get_client_ip();
 	$string_last = array("user_ultimoacesso" => " Último acesso em: {$dataEhora} IP: {$ip} ");
-	$updateacesso->EUpdaxete("ws_users", $string_last, "WHERE user_id = :uselast", "uselast={$userlogin['user_id']}");
+	$updateacesso->ExeUpdate("ws_users", $string_last, "WHERE user_id = :uselast", "uselast={$userlogin['user_id']}");
 
 	unset($_SESSION['userlogin']);
 	header("Location: {$site}");
@@ -88,8 +88,8 @@ endif;
 						<div class="row">							
 							<div class="col-md-12 col-sm-12">
 								<div class="form-group">
-									<label for="deliveryman_name">Nome do Entregador</label>
-									<input required type="text" name="deliveryman_name" id="deliveryman_name" class="form-control" placeholder="Digite o nome completo do entregador" />
+									<label for="motoboy_name">Nome do Entregador</label>
+									<input required type="text" name="motoboy_name" id="motoboy_name" class="form-control" placeholder="Digite o nome completo do entregador" />
 								</div>
 							</div>
 						</div>
@@ -97,8 +97,8 @@ endif;
 						<div class="row">
 							<div class="col-md-12 col-sm-12">
 								<div class="form-group">
-									<label for="deliveryman_phone_number">Número de Telefone (Whatsapp)</label>
-									<input required type="text" name="deliveryman_phone_number" id="deliveryman_phone_number" class="form-control" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" data-mask-selectonfocus="true" />
+									<label for="motoboy_phone_number">Número de Telefone (Whatsapp)</label>
+									<input required type="text" name="motoboy_phone_number" id="motoboy_phone_number" class="form-control" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" data-mask-selectonfocus="true" />
 								</div>
 							</div>
 						</div>
@@ -132,7 +132,7 @@ endif;
 				'error', false);
 				</script>";
 			else:	
-			    $lerbanco->FullRead("SELECT * FROM ws_motoboys WHERE user_id = :userid AND deliveryman_phone_number = :phonenumber", "userid={$userlogin['user_id']}&phonenumber={$getdadosobservacao['deliveryman_phone_number']}");
+			    $lerbanco->FullRead("SELECT * FROM ws_motoboys WHERE user_id = :userid AND motoboy_phone_number = :phonenumber", "userid={$userlogin['user_id']}&phonenumber={$getdadosobservacao['motoboy_phone_number']}");
 			    if ($lerbanco->getResult()) {
 			        echo "<script>
 					x0p('Opss...', 
@@ -200,8 +200,8 @@ endif;
 
 								<tr>	
 									<td><?=$i;?></td>
-									<td><?=$extractdadositens['deliveryman_name'];?></td>
-									<td><?=$extractdadositens['deliveryman_phone_number'];?></td>						
+									<td><?=$extractdadositens['motoboy_name'];?></td>
+									<td><?=$extractdadositens['motoboy_phone_number'];?></td>						
                                     <td>
 										<a href="<?=$site.$Url[0]."/add-motoboys&ex={$extractdadositens['id']}";?>">
 											<button type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>

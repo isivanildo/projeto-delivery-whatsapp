@@ -107,7 +107,7 @@ endif;
             </div>
             <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
             <ul>
-              <li><a href="https://mrinformatica.net.br/">CONHEÇA O Pará Delivery</a></li>
+              <li><a href="https://mrinformatica.net.br/">CONHEÇA A BELEMTECH</a></li>
               <li><a href="<?=$site?>home">LOGISTA - ENTENDA O SISTEMA</a></li>
               <li><a href="<?=$site;?>login">LOGIN</a></li>
 

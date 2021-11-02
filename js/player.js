@@ -26,6 +26,7 @@ var Player = function(playlist) {
   // Display the title of the first track.
   track.innerHTML = '1. ' + playlist[0].title;
 
+
   // Setup the playlist display.
   playlist.forEach(function(song) {
     var div = document.createElement('div');

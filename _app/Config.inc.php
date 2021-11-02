@@ -8,8 +8,8 @@ define('USER', 'user_paradelivery');
 define('PASS', 'belemtech');
 define('DBSA', 'paradelivery');
 
-define("EMAIL_MSG","contato@mrinformatica.net.br"); //Email para recebimento e envio de mensagens
-define("PHONE_NUMBER","91986270465"); //Telefone para chamarem no whats
+define("EMAIL_MSG","contato@paradelivery.com.br"); //Email para recebimento e envio de mensagens
+define("PHONE_NUMBER","91991803701"); //Telefone para chamarem no whats
 
 
 // DEFINE IDENTIDADE DO SITE ################
@@ -17,7 +17,6 @@ define("PHONE_NUMBER","91986270465"); //Telefone para chamarem no whats
 
 // DEFINE A BASE DO SITE ####################
 define('HOME', 'http://localhost/paradelivery/');  // SEMPRE COM A BARRA NA FRENTE ---- ---- ---- ----
-
 
 
 // DEFINE HTACCESS PARA URLS AMIGÁVEIS ####################

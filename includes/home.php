@@ -56,7 +56,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 
 	#footer
 	{
-		background-color:#d9534f;
+		background-color:#102548;
 		position:fixed;
 		bottom:0px;
 		left:0px;
@@ -214,16 +214,20 @@ $diadehoje   = $diasemana[$diasemana_numero];
 								});
 							</script>
 							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a id="mudarsimbolo_<?=$iddacategoria;?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<?=Check::Name($nome_cat);?>">
-										<strong class="nomargin_top"><?=$nome_cat;?></strong>
+								<div class="row">
+									<div class="col col-md-auto">
+									<h4 class="panel-title">
+										<a id="mudarsimbolo_<?=$iddacategoria;?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<?=Check::Name($nome_cat);?>">
+										<strong class="margin_cat_body"><?=$nome_cat;?></strong>
 										<i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
-									</a>
+										</a>
 								</h4>
+									</div>
+								</div>
 							</div>
 							<div id="<?=Check::Name($nome_cat);?>" class="panel-collapse collapse">
 								<div class="panel-body">
-									<?=($desc_cat != 'null' ? $desc_cat.'<br /><br />' : '');?>
+									<?=($desc_cat != 'null' ? $desc_cat.'<br /><br />' : '');?>									
 									<?php
 									$lerbanco->ExeRead('ws_itens', "WHERE user_id = :useridr AND id_cat = :nnn AND disponivel=1 ORDER BY posicao ASC", "useridr={$getu}&nnn={$id}");
 									if(!$lerbanco->getResult()):
@@ -236,8 +240,6 @@ $diadehoje   = $diasemana[$diasemana_numero];
 									else:
 										?>
 										<table class="table table-striped cart-list">
-
-
 											<thead>
 												<tr>
 													<th>
@@ -726,7 +728,7 @@ endif;
 	</span>
 	<input style="height: 34px;" type="text" name="quantidade" class="form-control input-number qtdpedido" value="1" min="1" max="100">
 	<span class="input-group-btn">
-		<button style="height: 34px;" type="button" class="btn btn-success btn-number" data-type="plus" data-field="quantidade">
+		<button style="height: 34px;" type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quantidade">
 			<span class="glyphicon glyphicon-plus"></span>
 		</button>
 	</span>

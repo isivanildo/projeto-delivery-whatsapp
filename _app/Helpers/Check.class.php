@@ -11,6 +11,7 @@ class Check {
     private static $Data;
     private static $Format;
 
+
     /**
      * <b>Verifica E-mail:</b> Executa validação de formato de e-mail. Se for um email válido retorna true, ou retorna false.
      * @param STRING $Email = Uma conta de e-mail

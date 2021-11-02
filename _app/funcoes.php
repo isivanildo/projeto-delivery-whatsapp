@@ -22,7 +22,7 @@ return $newtext;
 
 /**
  * DIAS ENTRE 02 DATAS
- * @author Norberto ALcântara
+ * @author Ivanildo Ferreira
  * @copyright (c) Célula Nerd, 2019
  * 
  * @param type $data_inicial 2013-08-01

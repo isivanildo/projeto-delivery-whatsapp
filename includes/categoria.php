@@ -478,7 +478,7 @@ endif;
 
 <div class="form-group">
   <label class="col-sm-2 control-label">Icone:</label>
-  <div class="col-sm-10">
+  <div class="col-sm-17">
    <div class="input-group">
      <div class="paymentWrap">
       <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons"> 
@@ -800,6 +800,7 @@ endif;
    <input type="radio" class="input" name="icon_cat" value="img/bandeja.png"> 
  </label>
 </b>
+
 </div>        
 </div>
 </div>

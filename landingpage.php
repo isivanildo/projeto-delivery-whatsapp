@@ -185,7 +185,7 @@ endif;
                             <p class="wow fadeInUp" data-wow-delay="0.3s">Diferente de outras plataformas conhecidas do mercado que que se tornam "sócios" do seu negócio com mensalidade e comissões abusivas por pedidos realizados em suas plataformas. Nós queremos apenas te ajudar, não cobramos porcentagem sobre suas vendas, apenas um valor mensal fixo para a manutenção do seu WebApp.</p>
                         </div>
                         <div class="about-btn btn-lg p-0 wow fadeInUp" data-wow-delay="0.3s">
-                            <a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<91986270465>&text=Olá Gostaria de conhecer mais sobre o sistema." target="_blank"></i><span class="float-right text-center font-w-700">Quero Conhecer</a>
+                            <a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=5591991803701&text=Olá Gostaria de conhecer mais sobre o sistema." target="_blank"></i><span class="float-right text-center font-w-700">Quero Conhecer</a>
                         </div>
                     </div>
                     <!--End About Content-->
@@ -382,7 +382,7 @@ endif;
                             <div class="video-popup-icon position-relative">
                                 <div class="pulse1"></div>
                                 <div class="pulse2"></div>
-                                <a class="popup-video" href="https://www.youtube.com/watch?v=cuZOUGyUfpA"><i class="icofont icofont-play-alt-2"></i></a>
+                                <a class="popup-video" href="https://www.youtube.com/"><i class="icofont icofont-play-alt-2"></i></a>
                             </div>
 
                         </div>
@@ -419,10 +419,10 @@ endif;
                     <div class="col-md-3 col-sm-6">
                         <div class="pricing-table-single text-center wow fadeIn" data-wow-delay="0.1s">
                             <div class="pricing-title">
-                                <h3 class="font-700">Teste</h3>
+                                <h3 class="font-700"><?=$texto['nomePlanoTeste']?></h3>
                             </div>
                             <div class="price-amount">
-                                <h2 class="font-700 color-base2"><span>7 Dias Gratis para Testar</span></h2>
+                                <h2 class="font-700 color-base2"><span><?=$texto['descricaoPlanoTeste']?></span></h2>
                             </div>
                             <div class="pricing-details">
                                 <ul>
@@ -435,7 +435,7 @@ endif;
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="/cadastro">Assinar</a>
+                                <a class="font-600" href="<?=$site?>/cadastro">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -445,10 +445,10 @@ endif;
                     <div class="col-md-3 col-sm-6">
                         <div class="pricing-table-single text-center wow fadeIn" data-wow-delay="0.2s">
                             <div class="pricing-title">
-                                <h3 class="font-700">Mensal</h3>
+                                <h3 class="font-700"><?=$texto['nomePlanoUm']?></h3>
                             </div>
                             <div class="price-amount">
-                                <h2 class="font-700 color-base2"><span>R$</span> 39 <sup class="font-800">.90</sup> <sub class="font-600"></sub></h2>
+                                <h2 class="font-700 color-base2"><span>R$</span><?=substr($texto['valorPlanoUm'], 0, -3)?><sup class="font-800"><?=substr($texto['valorPlanoUm'], -3)?></sup> <sub class="font-600"></sub></h2>
                             </div>
                             <div class="pricing-details">
                                 <ul>
@@ -457,11 +457,11 @@ endif;
                                     <li class="font-500 ">Link Amigável</li>
                                     <li class="font-500 ">Suporte para Instalação</li>
                                     <li class="font-500 ">Configuração e Cadastro dos <br>Produtos</li>
-                                    <li class="font-500">Menos de <b>R$ 1,70</b> por dia</li>
+                                    <li class="font-500">Menos de <b>R$ <?=Check::Real($texto['valorPlanoUm']/$texto['DiasPlanoUm'])?></b> por dia</li>
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="/cadastro">Assinar</a>
+                                <a class="font-600" href="<?=$site?>/cadastro">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -471,10 +471,10 @@ endif;
                     <div class="col-md-3 col-sm-6">
                         <div class="pricing-table-single text-center wow fadeIn" data-wow-delay="0.3s">
                             <div class="pricing-title">
-                                <h3 class="font-700">Semestral</h3>
+                                <h3 class="font-700"><?=$texto['nomePlanoDois']?></h3>
                             </div>
                             <div class="price-amount">
-                                <h2 class="font-700 color-base2"><span>R$</span> 180 <sup>.90</sup> <sub></sub></h2>
+                                <h2 class="font-700 color-base2"><span>R$</span><?=substr($texto['valorPlanoDois'], 0, -3)?><sup><?=substr($texto['valorPlanoDois'], -3)?></sup> <sub></sub></h2>
                             </div>
                             <div class="pricing-details">
                                 <ul>
@@ -483,11 +483,11 @@ endif;
                                     <li class="font-500 ">Link Amigável</li>
                                     <li class="font-500 ">Suporte para Instalação</li>
                                     <li class="font-500 ">Configuração e Cadastro dos <br>Produtos</li>
-                                    <li class="font-500">Apenas <b>R$ 1,44</b> por dia</li>
+                                    <li class="font-500">Apenas <b>R$ <?=Check::Real($texto['valorPlanoDois']/$texto['DiasPlanoDois'])?></b> por dia</li>
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="/cadastro">Assinar</a>
+                                <a class="font-600" href="<?=$site?>/cadastro">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -497,10 +497,10 @@ endif;
                     <div class="col-md-3 col-sm-6">
                         <div class="pricing-table-single text-center wow fadeIn" data-wow-delay="0.4s">
                             <div class="pricing-title">
-                                <h3 class="font-700 ">Anual</h3>
+                                <h3 class="font-700 "><?=$texto['nomePlanoTres']?></h3>
                             </div>
                             <div class="price-amount">
-                                <h2 class="font-700 color-base2"><span>R$</span>320<sup>.90</sup> <sub></sub></h2>
+                                <h2 class="font-700 color-base2"><span>R$</span><?=substr($texto['valorPlanoTres'], 0, -3)?><sup><?=substr($texto['valorPlanoTres'], -3)?></sup> <sub></sub></h2>
                             </div>
                             <div class="pricing-details">
                                 <ul>
@@ -509,11 +509,11 @@ endif;
                                     <li class="font-500 ">Link Amigável</li>
                                     <li class="font-500 ">Suporte para Instalação</li>
                                     <li class="font-500 ">Configuração e Cadastro dos <br>Produtos</li>
-                                    <li class="font-500">Menos de <b>R$ 1,00</b> por dia</li>
+                                    <li class="font-500">Menos de <b>R$ <?=Check::Real($texto['valorPlanoTres']/$texto['DiasPlanoTres'])?></b> por dia</li>
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="/cadastro">Assinar</a>
+                                <a class="font-600" href="<?=$site?>/cadastro">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -581,7 +581,7 @@ endif;
                                     </h4>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
-                                    <div class="font-500 panel-body">Sim, Você pode definir Pagamento On-Line pela Plataforma (PAGSEGURO ou MERCADO PAGO) e Tambem via Balcão ou na Entrega, você quem decide as formas de pagamento que irá utilizar em seu estabelecimento. Colocamos todas a sua disposição.</div>
+                                    <div class="font-500 panel-body">Sim, Você pode definir Pagamento On-Line pela Plataforma (PAGSEGURO ou MERCADO PAGO) e também via Balcão ou na Entrega, você quem decide as formas de pagamento que irá utilizar em seu estabelecimento. Colocamos todas a sua disposição.</div>
                                 </div>
                             </div>
                             <!--End Accordian Single-->
@@ -749,7 +749,7 @@ endif;
                         <div class="col-sm-3">
                             <div class="contact-info-single text-center wow fadeIn" data-wow-delay="0.1s">
                                 <i class="icofont icofont-email gradient-bg-1 color-white"></i>
-                                <p></p><a href="" title="Email" target="new">contato@mrinformatica.net.br</a></p>
+                                <p></p><a href="" title="Email" target="new">contato@paradelivery.com.br</a></p>
                             </div>
                         </div>
                         <!--End Contact Info Single-->
@@ -758,7 +758,7 @@ endif;
                         <div class="col-sm-3">
                             <div class="contact-info-single text-center wow fadeIn" data-wow-delay="0.2s">
                                 <i class="icofont icofont-phone gradient-bg-1 color-white"></i>
-                                <p><a href="https://api.whatsapp.com/send?phone=5511971760907&text=Olá! Gostaria de conhecer mais sobre o sistema." target="new">91 98627-0465</a></p>
+                                <p><a href="https://api.whatsapp.com/send?phone=5591991803701&text=Olá! Gostaria de conhecer mais sobre o sistema." target="new">91 99180-3701</a></p>
                             </div>
                         </div>
                         <!--End Contact Info Single-->
@@ -767,7 +767,7 @@ endif;
                         <div class="col-sm-3">
                             <div class="contact-info-single text-center wow fadeIn" data-wow-delay="0.3s">
                                 <i class="icofont icofont-social-google-map gradient-bg-1 color-white"></i>
-                                <p><a href="https://www.google.com/maps/place/Centro/@-23.6055292,-46.9292734,17z/data=!3m1!4b1!4m5!3m4!1s0x94cf07135443c6bd:0x74ca08c37f55ef87!8m2!3d-23.6055341!4d-46.9270847" target="new">Belém-PA</a></p>
+                                <p><a href="https://www.google.com/maps/place/MR+Inform%C3%A1tica/@-1.4228396,-48.47908,17z/data=!3m1!4b1!4m5!3m4!1s0x92a48be2cd4d8721:0x67332170dae80e84!8m2!3d-1.4228588!4d-48.4769004" target="new">Belém-PA</a></p>
                             </div>
                         </div>
                         <!--End Contact Info Single-->

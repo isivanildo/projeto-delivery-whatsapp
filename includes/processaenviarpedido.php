@@ -7,6 +7,20 @@ $detect = new Mobile_Detect;
 $site = HOME;
 $getu = $_POST['user_id'];
 
+$lerbanco->ExeRead('ws_fuso_horario', "WHERE user_id = :useridd", "useridd={$getu}");
+if(!$lerbanco->getResult()):
+else:
+	foreach ($lerbanco->getResult() as $dadosC):
+		extract($dadosC);
+	endforeach;
+endif;
+
+if(!empty($fuso_horario)):
+	date_default_timezone_set("".$fuso_horario."");
+else:
+	date_default_timezone_set('America/Sao_Paulo');
+endif;
+
 $lerbanco->ExeRead('ws_empresa', "WHERE user_id = :f", "f={$getu}");
 if (!$lerbanco->getResult()):
 else:
@@ -110,10 +124,6 @@ if(isset($get_dados_pedido['enviar_pedido']) && $get_dados_pedido['enviar_pedido
 
 	if (($get_dados_pedido['opcao_delivery'] != 'false2') && ($get_dados_pedido['forma_pagamento'] == $texto['msg_f_pagamento'])) {
 		$get_dados_pedido['forma_pagamento'] = "";
-	}
-
-	if (!empty($get_dados_pedido['mesa']) && !empty($get_dados_pedido['pessoas'])) {
-		$get_dados_pedido['forma_pagamento'] = "*Não informado*";
 	}
 
 	if(in_array('', $get_dados_pedido) || in_array('null', $get_dados_pedido)):

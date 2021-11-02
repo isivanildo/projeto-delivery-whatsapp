@@ -37,9 +37,9 @@ $texto['link_do_youtube'] = (!empty($getEmpresa[0]['link_do_youtube']) ? $getEmp
 //PLANOS DE USUÁRIOS
 
 //plano 1
-$texto['nomePlanoUm']   = (!empty($getEmpresa[0]['nome_plano_um']) ? $getEmpresa[0]['nome_plano_um'] : "");
-$texto['valorPlanoUm']  = (!empty($getEmpresa[0]['v_plano_um']) ? $getEmpresa[0]['v_plano_um'] : ""); 
-$texto['DiasPlanoUm']   = (!empty($getEmpresa[0]['dias_plano_um']) ? $getEmpresa[0]['dias_plano_um'] : ""); // valor em dias
+$texto['nomePlanoUm'] = (!empty($getEmpresa[0]['nome_plano_um']) ? $getEmpresa[0]['nome_plano_um'] : "");
+$texto['valorPlanoUm'] = (!empty($getEmpresa[0]['v_plano_um']) ? $getEmpresa[0]['v_plano_um'] : ""); 
+$texto['DiasPlanoUm'] = (!empty($getEmpresa[0]['dias_plano_um']) ? $getEmpresa[0]['dias_plano_um'] : ""); // valor em dias
 //plano 2
 $texto['nomePlanoDois']   = (!empty($getEmpresa[0]['nome_plano_dois']) ? $getEmpresa[0]['nome_plano_dois'] : "");
 $texto['valorPlanoDois']  = (!empty($getEmpresa[0]['v_plano_dois']) ? $getEmpresa[0]['v_plano_dois'] : ""); // Sempre valor inteiro
@@ -49,8 +49,13 @@ $texto['nomePlanoTres']   = (!empty($getEmpresa[0]['nome_plano_tres']) ? $getEmp
 $texto['valorPlanoTres']  = (!empty($getEmpresa[0]['v_plano_tres']) ? $getEmpresa[0]['v_plano_tres'] : ""); // Sempre valor inteiro
 $texto['DiasPlanoTres']   = (!empty($getEmpresa[0]['dias_plano_tres']) ? $getEmpresa[0]['dias_plano_tres'] : ""); // valor em dias
 
+// DESCRIÇÃO NO CASO DO PLANO DE TESTE
+$texto['nomePlanoTeste'] = (!empty($getEmpresa[0]['nome_plano_teste']) ? $getEmpresa[0]['nome_plano_teste'] : "");
+$texto['descricaoPlanoTeste'] = (!empty($getEmpresa[0]['descricao_plano_teste']) ? $getEmpresa[0]['descricao_plano_teste'] : "");
+
+
 // DIAS PARA TESTAR O SISTEMA
-$texto['DiasDeTeste']   = (!empty($getEmpresa[0]['dias_testes']) ? $getEmpresa[0]['dias_testes'] : ""); // valor em dias - minimo tem que ser 1
+$texto['DiasDeTeste'] = (!empty($getEmpresa[0]['dias_testes']) ? $getEmpresa[0]['dias_testes'] : ""); // valor em dias - minimo tem que ser 1
 
 // IMPORTANTE ***** SEUS DADOS DO MERCADO PAGO PARA RECEBER PAGAMENTO
 //--------------------------------------------------------------------
@@ -96,7 +101,7 @@ $texto['cadastros-complementos']    = 'Complementos pagos';
 $texto['cadastros-complementos-gratis']    = 'Complementos grátis';
 $texto['cadastros-complementos-categoria']    = 'Categorias de Complementos';
 $texto['cadastros-opcao']    = 'Complemento ou Condição';
-$texto['cadastro-pagamentos']    = 'Cadastrar formas de pagamento';
+$texto['cadastro-pagamentos']    = 'Cadastrar Formas de Pagamento';
 $texto['sair']                =  'Sair';
 
 // Página inicial

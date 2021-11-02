@@ -78,11 +78,11 @@ function tirarAcentos($string){
 				<div class="mg-b-10" align="center">
 					<?php if($_POST['opcao_delivery'] == 'true'): ?>
 						<img src="<?=$site;?>img/delivery.jpg" style="max-width: 100%;height: auto;" />
-						<?php elseif($_POST['opcao_delivery'] == 'false'): ?>
-							<img src="<?=$site;?>img/bcartao.jpg" style="max-width: 100%;height: auto;" />
-							<?php elseif($_POST['opcao_delivery'] == 'false2'): ?>
-								<img src="<?=$site;?>img/mesa.jpg" style="max-width: 100%;height: auto;" />
-							<?php endif; ?>
+					<?php elseif($_POST['opcao_delivery'] == 'false'): ?>
+						<img src="<?=$site;?>img/bcartao.jpg" style="max-width: 100%;height: auto;" />
+					<?php elseif($_POST['opcao_delivery'] == 'false2'): ?>
+						<img src="<?=$site;?>img/mesa.jpg" style="max-width: 100%;height: auto;" />
+					<?php endif; ?>
 
 						</div>	
 						<div class="box_style_2" id="order_process">				
@@ -110,6 +110,11 @@ function tirarAcentos($string){
 											<label class="form-control-label"><span style="color: red;">*</span> <?=$texto['msg_msg_qtdpessoas'];?></label>
 											<input type="number" name="pessoas" id="pessoas" class="form-control numero" maxlength="2" required>
 										</div>
+									</div>
+									<div>
+										<select name="forma_pagamento" id="forma_pagamento" style="display: none;">
+											<option value="*Não Informado*" selected>Forma Pagamento</option>
+										</select>
 									</div>
 								</div> 
 							<?php endif; ?>
@@ -191,7 +196,6 @@ function tirarAcentos($string){
 										<div class="form-group">
 											<label for="logradouro"><span style="color: red;">* </span><?=$texto['msg_sua_rua'];?></label>
 											<input type="text" required id="logradouro" name="logradouro" size="60" class="form-control" placeholder="">
-											<input type="hidden" required id="desconto" name="desconto" size="60" class="form-control" value="0">
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-6">
