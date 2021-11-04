@@ -1,0 +1,12 @@
+class ControllerJs {
+    
+    constructor() {
+
+
+
+    }
+
+    initialize(){
+
+    }
+}

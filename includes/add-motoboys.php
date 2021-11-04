@@ -1,4 +1,5 @@
 <?php
+
 $login = new Login(3);
 
 if(!$login->CheckLogin()):
@@ -8,20 +9,7 @@ else:
 	$userlogin = $_SESSION['userlogin'];
 endif;
 
-$logoff = filter_input(INPUT_GET, 'logoff', FILTER_VALIDATE_BOOLEAN);
-
-if(!empty($logoff) && $logoff == true):
-	$updateacesso = new Update;
-	$dataEhora    = date('d/m/Y H:i');
-	$ip           = get_client_ip();
-	$string_last = array("user_ultimoacesso" => " Último acesso em: {$dataEhora} IP: {$ip} ");
-	$updateacesso->ExeUpdate("ws_users", $string_last, "WHERE user_id = :uselast", "uselast={$userlogin['user_id']}");
-
-	unset($_SESSION['userlogin']);
-	header("Location: {$site}");
-endif;
 ?>
-
 
 <script type="text/javascript">
 
@@ -84,7 +72,7 @@ endif;
 						<b>Neste menu, você tem o controle de todos os motoboys.</b>
 					</p>					
 					<br />
-					<form id="formaddadicional" method="post">
+					<form id="formMotoboy" method="post">
 						<div class="row">							
 							<div class="col-md-12 col-sm-12">
 								<div class="form-group">
@@ -104,8 +92,11 @@ endif;
 						</div>
 
 
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
-						<button class="btn btn-primary">Cadastrar</button>
+						<input type="hidden" name="user_id" id="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" id="url_site" value="<?=$site;?>">
+						<input type="hidden" id="id_motoboy">
+						<input type="hidden" id="id_registro" value="novo">
+						<button class="btn btn-primary cad-motoboy" id="id_cadastro">Cadastrar</button>
 					</form>
 					<br />
 					<br />
@@ -114,81 +105,30 @@ endif;
 			</div><!-- End col  -->
 		</div><!-- End row  -->
 
-
-
 		<?php
-		$getdadosobservacao = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-		if(!empty($getdadosobservacao)):	
-
-			$getdadosobservacao = array_map('strip_tags', $getdadosobservacao);
-			$getdadosobservacao = array_map('trim', $getdadosobservacao);
-
-
-			if(in_array('', $getdadosobservacao)):
-				echo "<script>
-				x0p('Opss...', 
-				'Preencha todos os campos!',
-				'error', false);
-				</script>";
-			else:	
-			    $lerbanco->FullRead("SELECT * FROM ws_motoboys WHERE user_id = :userid AND motoboy_phone_number = :phonenumber", "userid={$userlogin['user_id']}&phonenumber={$getdadosobservacao['motoboy_phone_number']}");
-			    if ($lerbanco->getResult()) {
-			        echo "<script>
-					x0p('Opss...', 
-					'O número de telefone já está em uso por algum outro motoboy',
-					'error', false);
-					</script>";
-			    }
-			    else {
-			        $addbanco->ExeCreate("ws_motoboys", $getdadosobservacao);
-    				if($addbanco->getResult()): 
-    					header("Location: {$site}{$Url[0]}/add-motoboys");
-    				else:
-    					echo "<script>
-    					x0p('Opss...', 
-    					'Ocorreu um erro ao cadastrar!',
-    					'error', false);
-    					</script>";
-    				endif;
-			    }
-			endif;
-		endif;
-
-
-		$getdelldate = filter_input(INPUT_GET, 'ex', FILTER_VALIDATE_INT);
-
-		if(!empty($getdelldate)):
-			$deletbanco->ExeDelete("ws_motoboys", "WHERE user_id = :userid AND id = :id", "userid={$userlogin['user_id']}&id={$getdelldate}");
-			if($deletbanco->getResult()):
-				header("Location: {$site}{$Url[0]}/add-motoboys");
-			else:
-				echo "<script>
-				x0p('Opss...', 
-				'Ocorreu um erro ao excluir o motoboy!',
-				'error', false);
-				</script>";
-			endif;
-		endif;
+			//INICIO PAGINAÇÃO
+			$getpage = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
+			$pager = new Pager("{$site}{$Url[0]}/add-motoboys&page=");
+			$pager->ExePager($getpage, 10);
+			//FIM PAGINAÇÃO
 		?>
-
 
 		<div id="contentoptions" class="form-group">
 			<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 			<?php
-			$lerbanco->FullRead("SELECT * FROM ws_motoboys WHERE user_id = :userid ORDER BY id DESC", "userid={$userlogin['user_id']}");
+			$lerbanco->FullRead("SELECT * FROM ws_motoboys WHERE user_id = :userid ORDER BY id DESC LIMIT :limit OFFSET :offset", "userid={$userlogin['user_id']}&limit={$pager->getLimit()}&offset={$pager->getOffset()}");
 			if($lerbanco->getResult()):				
 				?>		
-
 
 				<div class="table-responsive">
 					<table data-sortable class="table table-hover table-striped">
 						<thead class="thead-dark">
 							<tr>
 								<th scope="col">#</th>
+								<th></th>
 								<th scope="col">Nome do Entregador</th>
 								<th scope="col">Número de Telefone</th>
-								<th scope="col">Ações</th>
+								<th scope="col" colspan="2">Ações</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -198,16 +138,16 @@ endif;
 								extract($extractdadositens);
 								?>
 
-								<tr>	
+								<tr>
 									<td><?=$i;?></td>
+									<td><?=$extractdadositens['id']?></td>
 									<td><?=$extractdadositens['motoboy_name'];?></td>
 									<td><?=$extractdadositens['motoboy_phone_number'];?></td>						
-                                    <td>
-										<a href="<?=$site.$Url[0]."/add-motoboys&ex={$extractdadositens['id']}";?>">
-											<button type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
-										</a>
-									</td>
-									
+                                    <td>										
+										<button type="button" class="btn btn-danger delete-motoboy" data-toggle="modal" data-target="#exampleModal">Excluir</button>									
+										<button type="button" class="btn btn-primary edit-motoboy">Editar</button>										
+									</td>									
+									</td>									
 								</tr>
 								<?php
 								$i++;
@@ -219,13 +159,38 @@ endif;
 				<?php
 
 			else:
+				$pager->ReturnPage();  
 			endif;
 			?>
 
-
+			<?php
+   				$pager->ExePaginator("ws_motoboys" ,"WHERE user_id = :userid", "userid={$userlogin['user_id']}");
+   				echo $pager->getPaginator();
+			?>
 			<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 		</div><!-- End form-group -->
 	</div>
 </div><!-- End container  -->
 
+<!--Tela modal de confirmação-->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão deste registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" id="confirmar">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

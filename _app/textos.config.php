@@ -10,7 +10,7 @@ $texto['site_custo_free_up']  = '<strong>Grátis acima de:</strong>';
 $texto['titulo_site_landing']    = (!empty($getEmpresa[0]['titulo_site']) ? $getEmpresa[0]['titulo_site'] : "");
 $texto['nome_site_landing']      = (!empty($getEmpresa[0]['nome_site']) ? $getEmpresa[0]['nome_site'] : "");
 $texto['descricao_site_landing'] = (!empty($getEmpresa[0]['descricao_site']) ? $getEmpresa[0]['descricao_site'] : "");
-$texto['autor_site_landing']     = 'Alex da silva lima';
+$texto['autor_site_landing']     = 'Ivanildo Ferreira';
 $texto['keywords_landing']       = (!empty($getEmpresa[0]['palavas_chaves']) ? $getEmpresa[0]['palavas_chaves'] : "");
 
 //ERROS

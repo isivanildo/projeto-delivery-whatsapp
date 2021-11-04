@@ -1451,6 +1451,7 @@ endif;
 
 endif;
 ?>
+<script src="../scripts/dados.js"></script>
 </body>
 </html>
 <?php
