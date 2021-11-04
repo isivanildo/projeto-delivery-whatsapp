@@ -158,8 +158,8 @@ endif;
                     <tbody id="table_tbody_listMotoboys">
                         <tr>
                             <td>1</td>
-                            <td>Ronaldo Vasquez</td>
-                            <td>(15) 12345-6789</td>
+                            <td>Ivanildo Ferreira</td>
+                            <td>(91) 986270465</td>
                             <td>
                                 <button class="btn btn-primary btn-xs">Enviar Pedido</button>
                             </td>
@@ -209,7 +209,8 @@ endif;
             var phone_number_nopont = phone_number_nopont.replace(")","");
             var phone_number_nopont = phone_number_nopont.replace(" ","");
             var phone_number_nopont = phone_number_nopont.replace("-","");
-            var text = "Pedido: "+listPedidos[exists]['codigo_pedido']+"%0ANome do Cliente: "+listPedidos[exists]['nome']+"%0ATelefone: "+listPedidos[exists]['telefone']+"%0AEndereço: "+listPedidos[exists]['rua']+", nº "+listPedidos[exists]['unidade']+"%0A"+listPedidos[exists]['bairro']+"%0A"+listPedidos[exists]['cidade']+"-"+listPedidos[exists]['uf']+"%0A%0AForma de Pagamento: "+listPedidos[exists]['forma_pagamento']+"%0AValor Total: "+listPedidos[exists]['total']+"%0ATroco: "+listPedidos[exists]['valor_troco'];
+            alert(listPedidos[exists]['telefone']);
+            var text = "Pedidoww: "+listPedidos[exists]['codigo_pedido']+"%0ANome do Cliente: "+listPedidos[exists]['nome']+"%0ATelefone: "+listPedidos[exists]['telefone']+"%0AEndereço: "+listPedidos[exists]['logradouro']+", nº "+listPedidos[exists]['numero']+"%0A"+listPedidos[exists]['bairro']+"%0A"+listPedidos[exists]['cidade']+"-"+listPedidos[exists]['uf']+"%0A%0AForma de Pagamento: "+listPedidos[exists]['forma_pagamento']+"%0AValor Total: "+listPedidos[exists]['total']+"%0ATroco: "+listPedidos[exists]['valor_troco'];
             var str = str+"<tr><td>"+(i+1)+"</td><td>"+name+"</td><td>"+phone_number+"</td><td><a target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=55"+phone_number_nopont+"&text="+text+"\"><button class=\"btn btn-primary btn-xs\">Enviar Pedido</button></a></td></tr>";
         }
         $("#table_tbody_listMotoboys").html(str);
@@ -287,7 +288,7 @@ endif;
             echo "{$msg_delivery_false}\n  <br />";
             echo "Observações: {$name_observacao_mesa}\n  <br />";
           else:
-            echo "Rua: {$logradouro}, Nº {$cidade}\n  <br />";
+            echo "Rua: {$logradouro}, Nº {$numero}\n  <br />";
             echo "Bairro: {$bairro}\n  <br />";
             echo "Cidade: {$cidade} - {$uf}\n  <br />";
             echo "Complemento: {$complemento}\n  <br />";
