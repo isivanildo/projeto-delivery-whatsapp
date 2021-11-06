@@ -91,11 +91,10 @@ endif;
 							</div>
 						</div>
 
-
 						<input type="hidden" name="user_id" id="user_id" value="<?=$userlogin['user_id'];?>">
-						<input type="hidden" id="url_site" value="<?=$site;?>">
-						<input type="hidden" id="id_motoboy">
-						<input type="hidden" id="id_registro" value="novo">
+						<input type="hidden" name="url_site" id="url_site" value="<?=$site;?>">
+						<input type="hidden" name="id" id="id_motoboy">
+						<input type="hidden" name="operacao" id="id_registro" value="novo">
 						<button class="btn btn-primary cad-motoboy" id="id_cadastro">Cadastrar</button>
 					</form>
 					<br />
@@ -125,13 +124,13 @@ endif;
 						<thead class="thead-dark">
 							<tr>
 								<th scope="col">#</th>
-								<th></th>
 								<th scope="col">Nome do Entregador</th>
 								<th scope="col">Número de Telefone</th>
 								<th scope="col" colspan="2">Ações</th>
 							</tr>
 						</thead>
 						<tbody>
+
 							<?php
 							$i = 1;
 							foreach ($lerbanco->getResult() as $extractdadositens):
@@ -140,13 +139,12 @@ endif;
 
 								<tr>
 									<td><?=$i;?></td>
-									<td><?=$extractdadositens['id']?></td>
 									<td><?=$extractdadositens['motoboy_name'];?></td>
 									<td><?=$extractdadositens['motoboy_phone_number'];?></td>						
                                     <td>										
-										<button type="button" class="btn btn-danger delete-motoboy" data-toggle="modal" data-target="#exampleModal">Excluir</button>									
-										<button type="button" class="btn btn-primary edit-motoboy">Editar</button>										
-									</td>									
+										<button type="button" class="btn btn-danger delete-motoboy" id="btnExcluir_<?=$id?>">Excluir</button>									
+										<button type="button" class="btn btn-primary edit-motoboy" id="btnEditar_<?=$id?>">Editar</button>							
+									</td>								
 									</td>									
 								</tr>
 								<?php
@@ -194,3 +192,8 @@ endif;
     </div>
   </div>
 </div>
+<script src="../scripts/controller/Motoboys.js"></script>
+<script src="../scripts/userMotoboy.js"></script>
+<script>
+
+</script>	

@@ -209,7 +209,6 @@ endif;
             var phone_number_nopont = phone_number_nopont.replace(")","");
             var phone_number_nopont = phone_number_nopont.replace(" ","");
             var phone_number_nopont = phone_number_nopont.replace("-","");
-            alert(listPedidos[exists]['telefone']);
             var text = "Pedidoww: "+listPedidos[exists]['codigo_pedido']+"%0ANome do Cliente: "+listPedidos[exists]['nome']+"%0ATelefone: "+listPedidos[exists]['telefone']+"%0AEndereço: "+listPedidos[exists]['logradouro']+", nº "+listPedidos[exists]['numero']+"%0A"+listPedidos[exists]['bairro']+"%0A"+listPedidos[exists]['cidade']+"-"+listPedidos[exists]['uf']+"%0A%0AForma de Pagamento: "+listPedidos[exists]['forma_pagamento']+"%0AValor Total: "+listPedidos[exists]['total']+"%0ATroco: "+listPedidos[exists]['valor_troco'];
             var str = str+"<tr><td>"+(i+1)+"</td><td>"+name+"</td><td>"+phone_number+"</td><td><a target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=55"+phone_number_nopont+"&text="+text+"\"><button class=\"btn btn-primary btn-xs\">Enviar Pedido</button></a></td></tr>";
         }

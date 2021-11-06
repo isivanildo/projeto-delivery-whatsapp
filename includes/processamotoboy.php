@@ -36,6 +36,7 @@ $getDadosMotoboy["motoboy_name"] = $nameMotoboy;
 $getDadosMotoboy["motoboy_phone_number"] = $phoneMotoboy;
 
 //Instruções executadas caso seja um novo registro, atualização pu exclusão
+
 if ($registro == "novo") {
     if (!in_array('', $getDadosMotoboy)):
         $addbanco->ExeCreate('ws_motoboys', $getDadosMotoboy);
@@ -70,7 +71,9 @@ if ($registro == "novo") {
     echo (json_encode($getDadosMotoboy));
 }
 
-//Instrução exwcutada caso seja modo de edição
+
+//Instrução exwcutada caso seja modo de edição]/*
+
 if ($registro == "editar") {
     $getDadosMotoboy = [];
     $lerbanco->ExeRead("ws_motoboys", "WHERE user_id = :userid and id = :id", "userid={$idUser}&id={$idMotoboy}");
@@ -83,14 +86,14 @@ if ($registro == "editar") {
 		extract($i);
 	endforeach;
 
-    $LocalEmjason = array();
+    $LocalEmArray = array();
     $LocalEmArray['id'] = $id;
     $LocalEmArray['userId'] = $user_id;
     $LocalEmArray['nomeMotoboy'] = $motoboy_name;
     $LocalEmArray['telefone'] = $motoboy_phone_number;
     $LocalEmArray["urlCliente"] =  "{$site}{$nome_empresa_link}";
 
-    echo(json_encode($LocalEmArray));
+    echo json_encode($LocalEmArray);
 
 endif;
 }
