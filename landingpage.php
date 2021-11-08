@@ -81,7 +81,7 @@ endif;
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="icofont icofont-navigation-menu"></i>
                         </button>
-                        <a class="navbar-brand" href="index.php"><img src="assets_land/images/logo.png" class="logo" alt=""></a>
+                        <a class="navbar-brand" href="index"><img src="assets_land/images/logo.png" class="logo" alt=""></a>
                     </div>
                     <!-- End Header Navigation -->
 

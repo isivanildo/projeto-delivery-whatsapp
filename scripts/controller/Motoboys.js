@@ -1,7 +1,7 @@
 class Motoboys {
     
-    constructor(){
-        this.formEl = document.querySelector("#formMotoboy");
+    constructor(formId, tableId){
+        this.formEl = document.getElementById(formId);
 
         this._idButtonOperationEl = "";
 
@@ -21,7 +21,6 @@ class Motoboys {
         })  
         return user;
     }
-
 
     get idMotoboy(){
         return this.id;

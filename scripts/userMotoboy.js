@@ -1,7 +1,6 @@
-let userMotoboy = new Motoboys();
+let userMotoboy = new Motoboys("formMotoboy");
 
 $(document).ready(function(){
-    //var idMotoboy;
     //Evento responsável por gravar e atualizar informações do motoboy
     $(".cad-motoboy").click(function(event) {
         //event.preventDefault();
