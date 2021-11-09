@@ -1,6 +1,6 @@
 /*3.1 Preloader*/
 #preloader {
-	background-color:#000000; 
+	background-color:#102548; 
 }
 
 /*BOTÃO ADICIONAR AO CARRINHO*/
@@ -90,13 +90,13 @@ a:hover,a:focus {color: #111;}
 
 /*-------- Content--------*/
 header.sticky{
-	background-color: #000000;
+	background-color: #102548;
 }
 .features-content {
     background-color: #000000;
 }
 #preloader {
-	background-color:#000000; 
+	background-color:#102548; 
 }
 .modal-popup {
 	background: #000000;
@@ -180,7 +180,7 @@ a.button_intro.outilne, .button_intro.outline  {
 	border:2px solid #1E90FF;
 }
 .high_light{
-	background:#8560a8;
+	background:#102548;
 }
 
 /* All styles MENU 

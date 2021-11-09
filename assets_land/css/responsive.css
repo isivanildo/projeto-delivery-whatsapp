@@ -438,6 +438,48 @@
     }
 }
 
+@media only screen and (max-width: 560px){
+/*------------------------------------------------------------------------------
+Criado por Ivanildo Ferreira 08/11/2021
+--------------------------------------------------------------------------------*/  
+  .fa-whatsapp {
+    margin-bottom: 200px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .whatsapp-link {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    left: 10px;
+    color: #fff;
+    background-color: #25d366;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+ 
+ nav.navbar.bootsnav {
+    background: rgba(16, 37, 72, 1);
+    background: linear-gradient(-180deg, rgba(1, 30, 40, 1) 0%, rgba(2, 20, 40, 1) 100%);
+    background: -webkit-gradient(-180deg, rgba(1, 30, 40, 1) 0%, rgba(2, 20, 40, 1) 100%);
+    border-bottom: 0;
+    z-index: 9;
+}
+
+.logo {
+    margin-top: -9px;
+}
+
+.topo-small {
+    margin-top: -50px;
+}
+
+}
 
 /*==============================================================
    Medium Screen Mobile Devices
@@ -447,18 +489,6 @@
     .preloader .spinner {
         margin: 60% auto;
     }
-    
-    /*Ivanildo*/
-    nav.navbar.bootsnav {
-        background-color: rgba(4, 20, 30, 1);
-        border-bottom: 0;
-        z-index: 9;
-    }
-
-    .logo {
-        margin-top: -9px;
-    }
-    /*Fim*/
 
     nav.navbar.bootsnav .navbar-toggle {
         background-color: transparent;

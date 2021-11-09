@@ -4,5 +4,5 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php?url=$1
 
-RewriteCond %{HTTPS} on
+RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}

@@ -1320,7 +1320,7 @@ nav.navbar.bootsnav {
 .click-to-top {
     position: fixed;
     bottom: 30px;
-    right: 15px;
+    right: 10px;
     overflow: hidden;
     border-radius: 50%;
 }

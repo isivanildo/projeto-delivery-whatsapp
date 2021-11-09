@@ -18,7 +18,7 @@ endif;
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="zxx">
+<html lang="pt-BR">
 <!--<![endif]-->
 
 <head><meta charset="utf-8">
@@ -32,6 +32,8 @@ endif;
     <link rel="shortcut icon" type="image/png" href="assets_land/images/favicon.png">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="assets_land/css/bootstrap.css">
+    <!--Order Object CSS-->
+    <link rel="stylesheet" type="text/css" href="assets_land/css/ordenacao.css">
     <!--Owl Carousel CSS-->
     <link rel="stylesheet" type="text/css" href="assets_land/css/owl.carousel.min.css">
     <!--Magnific PopUp Stylesheet-->
@@ -48,6 +50,10 @@ endif;
     <link rel="stylesheet" type="text/css" href="assets_land/css/style.css">
     <!--Responsive CSS-->
     <link rel="stylesheet" type="text/css" href="assets_land/css/responsive.css">
+
+    
+    <script src="https://kit.fontawesome.com/d0c2777bf0.js" crossorigin="anonymous"></script>
+
 
    
 </head>
@@ -81,14 +87,14 @@ endif;
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="icofont icofont-navigation-menu"></i>
                         </button>
-                        <a class="navbar-brand" href="index"><img src="assets_land/images/logo.png" class="logo" alt=""></a>
+                        <a class="navbar-brand" href="<?=$site;?>"><img src="assets_land/images/logo.png" class="logo" alt=""></a>
                     </div>
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeIn" data-out="fadeOut">
-                            <li class="active"><a href="index">Home</a></li>
+                            <li class="active"><a href="<?=$site;?>">Home</a></li>
                             <li><a href="#about">Sobre</a></li>
                             <li><a href="<?=$site?>lojas">Estabelecimentos</a></li>
                             <li><a href="#app-screenshot">Veja o Sistema</a></li>
@@ -113,8 +119,8 @@ endif;
                 <!--Start Row-->
                 <div class="row">
                     <!--Start Banner Caption-->
-                    <div class="col-md-6">
-                        <div class="caption-content">
+                    <div class="col-sm-12 col-md-6 order-2 order-sm-1">
+                        <div class="caption-content topo-small">
                             <h1 class="font-700 color-white text-uppercase wow fadeInUp" data-wow-delay="0.1s">Receba Pedidos pelo Whatsapp</h1>
                             <p class="color-white wow fadeInUp" data-wow-delay="0.2s">Conheça a nossa plataforma de Delivery, onde 100% do valor do pedido é do estabelecimento. Sem comissões abusivas, onde o preço dos seus produdos é igual para cliente no WebApp e no seu local fisico de atendimento.</p>
                             <div class="caption-btn wow fadeInUp" data-wow-delay="0.3s">
@@ -125,7 +131,7 @@ endif;
                     <!--End Banner Caption-->
 
                     <!--Start Banner Image-->
-                    <div class="col-md-6">
+                    <div class="col-sm-12 col-md-6 order-1 order-sm-1 topo-small">
                         <div class="banner-img wow fadeIn" data-wow-delay="0.4s">
                             <img src="assets_land/images/app1.png" class="img-responsive" alt="Image">
                         </div>
@@ -150,7 +156,7 @@ endif;
                         <div class="section-heading text-center">
                             <h2 class="font-700 color-base text-uppercase wow fadeInUp" data-wow-delay="0.1s">PARCEIROS</h2>
                             <div class="why-choose-img wow fadeIn" data-wow-delay="0.2s">
-                                <img src="assets_land/images/parceiro1.png" class="img-responsive" alt="Image">
+                                <img src="assets_land/images/parceiro1.png" class="img-fluid" alt="Image">
                             </div>
                             
                             
@@ -170,15 +176,15 @@ endif;
                 <!--Start About Row-->
                 <div class="row">
                     <!--Start About Image-->
-                    <div class="col-md-6">
-                        <div class="about-img wow fadeIn" data-wow-delay="0.2s">
+                    <div class="col">
+                        <div class="about-img wow fadeIn" data-wow-delay="0.2s" style="display: block; margin-left: auto; margin-right: auto;">
                             <img src="assets_land/images/app2.png" class="img-responsive" alt="Image">
                         </div>
                     </div>
                     <!--End About Image-->
 
                     <!--Start About Content-->
-                    <div class="col-md-6">
+                    <div class="col">
                         <div class="about-content">
                             <h3 class="font-700 wow fadeInUp" data-wow-delay="0.1s">Revolucionamos a maneira de fazer pedidos.</h3>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">O Pará Delivery chegou revolucionando a forma de realizar pedidos via whatsapp, uma plataforma leve, simples para o seu cliente e complexa para o seu estabelecimento. Seu estabelecimento pode receber pagamentos On-line ou na entrega!</p>
@@ -820,13 +826,20 @@ endif;
 
             <!--Start ClickToTop-->
             <div class="click-to-top">
-                <a class="gradient-bg" href="#header"><i class="icofont icofont-simple-up"></i></a>
+                <a class="gradient-bg" href="#header"><i class="icofont icofont-simple-up"></i></a>                
             </div>
+
+            <div>               
+                <a class="whatsapp-link" href="https://wa.me/5591984552602" target="_blank"><i class="fab fa-whatsapp"></i></a>              
+            </div>
+            
             <!--End ClickToTop-->
         </footer>
         <!--End Footer-->
     </div>
     <!--End Body Wrap-->
+
+    <script src="lojas/js/scriptkey.js"></script>
 
     <!--jQuery JS-->
     <script src="assets_land/js/jquery.min.js"></script>

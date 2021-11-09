@@ -98,7 +98,7 @@ endif;
             <img src="<?= $site; ?>img/home.png" height="30" width="40" alt="" data-retina="true" class="hidden-lg hidden-md hidden-sm">
           </a>
         </div>
-        <nav class="col--md-8 col-sm-8 col-xs-8">
+        <nav class="col-md-8 col-sm-8 col-xs-8">
           <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
           <div class="main-menu">
             <div id="header_menu">
@@ -120,12 +120,12 @@ endif;
   <!-- End Header =============================================== -->
 
   <!-- SubHeader =============================================== -->
-  <section class="parallax-window" id="home" data-parallax="scroll" data-image-src="sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
+  <section class="parallax-window" id="home" data-parallax="scroll" data-image-src="img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
 
    <div id="subheader">
 
       <div id="sub_content">
-        <img src="imagem-logo.png" alt="iFoomeZap" style="width:25%;margin-top:-13%;">
+        <img src="img/imagem-logo.png" alt="iFoomeZap" style="width:25%;margin-top:-13%;">
         <h2 style="color: #fff; font-size: 50px !important">Procurando <strong id="js-rotating"><b></b>Os Melhores Restaurantes?</b></strong></h2>
         <p>
           Os melhores cardápios estão aqui. Pará Delivery, Descubra!
@@ -146,55 +146,8 @@ endif;
     </div><!-- End sub_content -->
   </div><!-- End subheader -->
 
-
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#pesquisar').click(function(){
-        var pesquisa = $('#valor_cep').val();
-        pesquisa = pesquisa.replace("-", "").replace(".", "");
-
-        if(pesquisa == ''){
-          x0p('Opss...', 
-            'Informe o CEP',
-            'error', false);
-        }else if(pesquisa.length == 1){
-          x0p('Opss...', 
-            'O formato do CEP e inválido!',
-            'error', false);
-        }else{
-
-
-          $.ajax({
-            url: '<?=$site?>controlers/processabuscacliente.php',
-            method: 'post',
-            data: {'valor_do_cep' : pesquisa},
-            success: function(data){
-
-              if(data == 1){
-                x0p('Opss... 😕', 
-                  'Registro não encontrado, verifique novamente.',
-                  'error', false);
-              }else if(data == 2){
-               x0p('Que pena! 😔', 
-                'Ainda não temos opções nessa região.',
-                'error', false);
-             }else{
-              $('#resultadobusca').html(data);
-
-              $('html, body').animate({
-                scrollTop: $("#resultadobuscaa").offset().top
-              }, 2000);
-
-            }    
-
-          }
-        });
-
-        }
-      });
-    });
-  </script>
+ <div id="name_site" style="display: none;"><?=$site;?></div>
+<!--era aqui o scriop Ivanildo-->
 
 
   <div id="count" class="hidden-xs">
@@ -910,45 +863,7 @@ endif;
     });
   </script>
 
-  <script language="JavaScript">
-    window.onload = function() {
-      document.addEventListener("contextmenu", function(e){
-        e.preventDefault();
-      }, false);
-      document.addEventListener("keydown", function(e) {
-            //document.onkeydown = function(e) {
-              // "I" key
-              if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                disabledEvent(e);
-              }
-              // "J" key
-              if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                disabledEvent(e);
-              }
-              // "S" key + macOS
-              if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-                disabledEvent(e);
-              }
-              // "U" key
-              if (e.ctrlKey && e.keyCode == 85) {
-                disabledEvent(e);
-              }
-              // "F12" key
-              if (event.keyCode == 123) {
-                disabledEvent(e);
-              }
-            }, false);
-      function disabledEvent(e){
-        if (e.stopPropagation){
-          e.stopPropagation();
-        } else if (window.event){
-          window.event.cancelBubble = true;
-        }
-        e.preventDefault();
-        return false;
-      }
-    };
-  </script>
+  <script src="js/scriptkey.js"></script>
 
   <div id='whatsapp-chat' class='hide'>
     <div class='header-chat'>
@@ -995,5 +910,7 @@ endif;
                     <div id='get-number'></div><a class='close-chat' href='javascript:void'>×</a>
                   </div>
                   <a class='blantershow-chat' href='javascript:void' title='Show Chat'><i class='fab fa-whatsapp'></i>Precisa de ajuda?</a>
+                  <script src="js/Address.js"></script>
+                  <script src="js/scripts.js"></script>
                 </body>
                 </html>
