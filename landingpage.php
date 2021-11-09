@@ -829,8 +829,8 @@ endif;
                 <a class="gradient-bg" href="#header"><i class="icofont icofont-simple-up"></i></a>                
             </div>
 
-            <div>               
-                <a class="whatsapp-link" href="https://wa.me/5591984552602" target="_blank"><i class="fab fa-whatsapp"></i></a>              
+            <div class="whatsappvisible">               
+                <a class="whatsapp-link" href="https://wa.me/5591991803701" target="_blank"><i class="fab fa-whatsapp"></i></a>              
             </div>
             
             <!--End ClickToTop-->
